@@ -2,11 +2,17 @@
 
 ### *Unleash the Power of AI-Driven Molecular Analysis*
 
+<p align="center">
+  <img src="docs/screenshot1.png" alt="Main Interface" width="80%">
+</p>
+
 A comprehensive Python toolkit for analyzing molecular complexes using FairChem and GemNet models. Optimizes absorbent and analyte structures, forms complexes, and predicts molecular properties.
 
-![Python Version](https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![License](https://img.shields.io/badge/License-MIT-00C853?style=for-the-badge&logo=opensourceinitiative&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge)
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.8%2B-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/License-MIT-00C853?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="License">
+  <img src="https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge" alt="Status">
+</p>
 
 ---
 
@@ -17,6 +23,19 @@ A comprehensive Python toolkit for analyzing molecular complexes using FairChem 
 - 📊 **Comprehensive Property Prediction** - Calculate electronic, energetic, and spectroscopic properties
 - 🖥️ **Beautiful GUI** - Modern React-based web interface
 - 🐧 **Linux Desktop App** - Installable DEB package for Ubuntu/Debian
+
+---
+
+## 📥 Download
+
+**[⬇️ Download DEB Package (Latest Release)](https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis/releases/latest)**
+```bash
+# Install
+sudo dpkg -i molecular-analyzer-deb.deb
+
+# Run
+molecular-analyzer
+```
 
 ---
 
@@ -41,11 +60,10 @@ cd ..
 
 **Option 1: Web Interface**
 ```bash
-# Terminal 1: Start backend
+# Start backend (serves both API and frontend)
 python3 api.py
 
-# Terminal 2: Start frontend
-cd frontend && npm start
+# Open browser at http://localhost:8000
 ```
 
 **Option 2: Linux Desktop App**
@@ -64,48 +82,62 @@ molecular-analyzer
 
 ---
 
-## 📦 Installation Options
-
-### Linux Desktop App (DEB Package)
-
-Download and install the DEB package from [Releases](https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis/releases):
-```bash
-sudo dpkg -i molecular-analyzer_1.0.1_amd64.deb
-molecular-analyzer
-```
-
-### From Source
-```bash
-pip install -r requirements.txt
-cd frontend && npm install && npm run build && cd ..
-python3 api.py
-```
-
----
-
 ## 🎨 Screenshots
 
-![Upload Interface](docs/screenshot1.png)
-![Analysis Results](docs/screenshot2.png)
+<div align="center">
+
+### Upload Interface
+<img src="docs/screenshot1.png" alt="Upload Interface" width="90%">
+
+*Upload your absorbent and analyte .gjf files with drag-and-drop support*
+
+### Analysis Results
+<img src="docs/screenshot2.png" alt="Analysis Results" width="90%">
+
+*View comprehensive molecular properties including HOMO-LUMO gap, binding energy, and more*
+
+### Settings Panel
+<img src="docs/screenshot3.png" alt="Settings" width="90%">
+
+*Configure optimization parameters, DFT methods, and computational settings*
+
+</div>
 
 ---
 
 ## 📊 Property Calculations
 
-### Electronic Properties
-- HOMO-LUMO gap calculations
-- Dipole moment and polarizability tensors
+<table>
+<tr>
+<td width="33%">
+
+### 🔋 Electronic Properties
+- HOMO-LUMO gap
+- Dipole moment
+- Polarizability tensors
 - Molecular orbital analysis
 
-### Energetic Properties
-- Binding energy calculations
-- Total energy and force analysis
+</td>
+<td width="33%">
+
+### ⚡ Energetic Properties
+- Binding energy
+- Total energy
+- Force analysis
 - Thermodynamic properties
 
-### Spectroscopic Properties
-- IR frequency predictions
-- UV-Vis absorption spectra
-- Raman scattering calculations
+</td>
+<td width="33%">
+
+### 🌈 Spectroscopic Properties
+- IR frequencies
+- UV-Vis absorption
+- Raman scattering
+- NMR predictions
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -125,19 +157,26 @@ Molecular-Complex-Analysis/
 │   │   ├── index.js
 │   │   └── index.css
 │   └── package.json
+├── docs/                     # Documentation & screenshots
 ├── uploads/                  # Uploaded files (gitignored)
 ├── results/                  # Analysis results (gitignored)
 └── README.md
 ```
 
-### Building the Desktop App
+### Building from Source
 ```bash
+# Build frontend
 cd frontend
 npm run build
 cd ..
 
-# Create DEB package (see docs/BUILD.md)
+# Run the app
+python3 api.py
 ```
+
+### Building DEB Package
+
+See [BUILD.md](docs/BUILD.md) for detailed instructions on creating the Linux desktop app.
 
 ---
 
@@ -158,13 +197,21 @@ structure, properties = analyzer.analyze_complex(
 # Access results
 print(f"Binding Energy: {properties['binding_energy']:.2f} kcal/mol")
 print(f"HOMO-LUMO Gap: {properties['homo_lumo_gap']:.2f} eV")
+print(f"Dipole Moment: {properties['dipole_moment']:.2f} D")
 ```
 
 ---
 
 ## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome! Here's how you can help:
+
+- 🐛 Report bugs via [Issues](https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis/issues)
+- 💡 Suggest features and enhancements
+- 📝 Submit pull requests for bug fixes and new features
+- 📚 Improve documentation
+
+### Development Setup
 
 1. Fork the repository
 2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
@@ -182,24 +229,30 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🙏 Acknowledgments
 
+Built with powerful open-source tools:
 - [FairChem](https://github.com/FAIR-Chem/fairchem) - ML models for molecular property prediction
 - [GemNet](https://github.com/TUM-DAML/gemnet_pytorch) - Geometric message passing neural networks
 - [ASE](https://wiki.fysik.dtu.dk/ase/) - Atomic Simulation Environment
+- [React](https://reactjs.org/) - Frontend framework
+- [FastAPI](https://fastapi.tiangolo.com/) - Backend API framework
 
 ---
 
 ## 📧 Contact
 
-Safi Ullah Majid - [@Safi-ullah-majid](https://github.com/Safi-ullah-majid)
+**Safi Ullah Majid**
 
-Project Link: [https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis](https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis)
+- GitHub: [@Safi-ullah-majid](https://github.com/Safi-ullah-majid)
+- Project: [Molecular-Complex-Analysis](https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis)
 
 ---
 
 <div align="center">
 
+### 💖 Made with passion for computational chemistry
+
 **⭐ Star this repository if you find it helpful!**
 
-Made with ❤️ by Safi Ullah Majid
+[Report Bug](https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis/issues) · [Request Feature](https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis/issues) · [Documentation](https://github.com/Safi-ullah-majid/Molecular-Complex-Analysis/wiki)
 
 </div>
