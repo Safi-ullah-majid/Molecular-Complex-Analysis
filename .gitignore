@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+frontend/build/
+frontend/.env.local
+
+# App specific
+uploads/
+results/
+models/
+*.traj
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+*~
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Electron
+dist/
+*.AppImage
+*.deb
+molecular-analyzer-deb/
+
+# Temporary
+*.tmp
+.cache/

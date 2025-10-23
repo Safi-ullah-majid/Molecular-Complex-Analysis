@@ -1,0 +1,7 @@
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+pydantic==2.5.0
+ase==3.22.1
+numpy==1.26.2
+torch==2.1.0

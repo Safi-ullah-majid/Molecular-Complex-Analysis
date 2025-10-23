@@ -1,0 +1,35 @@
+{
+  "name": "molecular-complex-analyzer",
+  "version": "1.0.0",
+  "description": "Molecular Complex Analyzer Desktop App",
+  "author": "Safi Ullah Majid",
+  "homepage": "https://github.com/Safi-ullah-majid/molecular-complex-analyzer",
+  "main": "electron.js",
+  "scripts": {
+    "start": "python3 api.py",
+    "electron": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.molecular.analyzer",
+    "productName": "MolecularAnalyzer",
+    "linux": {
+      "target": ["AppImage", "deb"],
+      "category": "Science",
+      "maintainer": "Safi Ullah Majid",
+      "icon": "icon.png",
+      "executableName": "molecular-analyzer"
+    },
+    "files": [
+      "electron.js",
+      "api.py",
+      "analyzer.py",
+      "icon.png",
+      "frontend/build/**/*"
+    ]
+  },
+  "devDependencies": {
+    "electron": "28.0.0",
+    "electron-builder": "^24.9.1"
+  }
+}
